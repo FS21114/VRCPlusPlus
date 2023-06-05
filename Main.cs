@@ -20,12 +20,12 @@ namespace VRCPlusPlus
 		}
 		public override void OnLateUpdate()
 		{
-			if (reset && RoomManager.field_Internal_Static_ApiWorld_0.authorName != null)
+			if (reset && ((RoomManager.field_Internal_Static_ApiWorld_0?.authorName ?? null) != null))
 			{
 				reset = false;
 				username = RoomManager.field_Internal_Static_ApiWorld_0.authorName;
 			}
-			if (username != null)
+			if (username != null && Networking.LocalPlayer != null)
 			{
 				Networking.LocalPlayer.displayName = username;
 			}
